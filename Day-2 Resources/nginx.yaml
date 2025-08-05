@@ -1,0 +1,60 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: first-nginx-pod
+  namespace: dev
+spec: 
+   containers:
+   - name: first-nginx-container
+     image: nginx
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: second-nginx-pod
+  namespace: dev
+spec: 
+   containers:
+   - name: second-nginx-container
+     image: nginx
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: third-nginx-pod
+  namespace: dev
+spec: 
+   containers:
+   - name: third-nginx-container
+     image: nginx
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: forth-nginx-pod
+  namespace: dev
+spec: 
+   containers:
+   - name: forth-nginx-container
+     image: nginx
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: fifth-nginx-pod
+  namespace: dev
+spec: 
+   containers:
+   - name: fifth-nginx-container
+     image: nginx
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sixth-nginx-pod
+  namespace: dev
+spec: 
+   containers:
+   - name: sixth-nginx-container
+     image: nginx
+---

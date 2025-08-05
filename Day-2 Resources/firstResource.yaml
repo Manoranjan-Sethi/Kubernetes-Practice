@@ -1,0 +1,8 @@
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: dev-resource-quota
+  namespace: dev
+spec:
+  hard: #strict limit
+    pods: "5"
