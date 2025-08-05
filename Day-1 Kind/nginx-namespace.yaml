@@ -1,0 +1,9 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-namespace-pod
+  namespace: devops
+spec:
+  containers:
+    - name: nginx-namespace-pod
+      image: nginx
