@@ -5,28 +5,9 @@
 This document explains the **Kubernetes architecture** and its main components, divided into **Master Node** and **Worker Node** roles.
 
 ---
-
-
 ## 📌 Architecture Diagram
-````markdown
-```mermaid
-flowchart TB
-    subgraph Master Node
-        A[API Server] --> B[etcd]
-        A --> C[Controller Manager]
-        A --> D[Scheduler]
-    end
-    
-    subgraph Worker Node
-        E[Kubelet] --> G[Pods]
-        F[Kube-Proxy] --> G
-    end
-    
-    A <--> E
-    C <--> E
-    D <--> E
-````
 
+![Kubernetes Architecture](./kubernetes-architecture.png)
 ---
 
 ## 🖥 Master Node Components
