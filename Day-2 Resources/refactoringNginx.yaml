@@ -1,0 +1,21 @@
+kind: Deployment # Collection of pods
+apiVersion: apps/v1
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 10 # Number of pod replicas
+  # The deployment will create 10 pods with unique names like nginx-deployment-<random
+  # After creating 10 pods they are still not a part of the deployment
+  # to make them use the nginx-deployment we need to add a selector
+  # This selector will match the labels of the pods created by this deployment
+  selector:
+    matchLabels:
+      app: nginx-app # Label to select the pods managed by this deployment
+  template:
+    metadata:
+      labels:
+        app: nginx-app # Label to identify the pods
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
