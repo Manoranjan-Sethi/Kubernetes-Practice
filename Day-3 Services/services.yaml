@@ -1,0 +1,17 @@
+kind: Services
+apiVersion: v1
+metadata:
+  name: services-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: services
+  template:
+    metadata:
+      labels:
+        app: services
+    spec:
+      containers:
+      - name: services-container
+        image: nginx
