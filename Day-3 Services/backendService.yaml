@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+  - port: 8000 # the backend service running port is port 8000
+    targetPort: 80 # the backend pod is running on port 80
