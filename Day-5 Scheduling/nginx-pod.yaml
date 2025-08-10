@@ -1,0 +1,18 @@
+kind: Deployment # Collection of pods
+apiVersion: apps/v1
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-app 
+  template:
+    metadata:
+      labels:
+        app: nginx-app 
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+      nodeName: mykindcluster-worker3
