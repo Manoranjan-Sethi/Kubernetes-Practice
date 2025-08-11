@@ -1,0 +1,24 @@
+# Sechudling using taints
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 15
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx 
+        #The above only for scheduling using taints which doesn't targets mykindcluster-worker3
+      tolerations:               # Sechudling using tolerations
+      - key: "name"
+        operator: "Equal"
+        value: "nopod"  # This will use mykindcluster-worker3 node along with other nodes
+        effect: "NoSchedule"
