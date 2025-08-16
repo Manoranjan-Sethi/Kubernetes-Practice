@@ -71,6 +71,17 @@ Check services:
 kubectl get svc -n monitoring
 ```
 
+Patch the Type from ClusterIP to Node Port and changing the ports
+
+```bash
+kubectl patch svc monitoring-grafana -n monitoring --type=merge -p '{"spec":{"type":"NodePort","ports":[{"port":80,"targetPort":80,"nodePort":31000}]}}'
+kubectl patch svc monitoring-kube-prometheus-alertmanager -n monitoring --type=merge -p '{"spec":{"type":"NodePort","ports":[{"name":"main","port":9093,"targetPort":9093,"nodePort":32000},{"name":"web","port":8080,"targetPort":8080,"nodePort":30681}]}}'
+
+kubectl patch svc monitoring-prometheus-node-exporter -n monitoring --type=merge -p '{"spec":{"type":"NodePort","ports":[{"name":"metrics","port":9100,"targetPort":9100,"nodePort":32001}]}}'
+
+kubectl patch svc monitoring-kube-prometheus-prometheus -n monitoring --type=merge -p '{"spec":{"type":"NodePort","ports":[{"name":"http-main","port":9090,"targetPort":9090,"nodePort":30000},{"name":"http-web","port":8080,"targetPort":8080,"nodePort":31782}]}}'
+```
+
 ---
 
 ## 🌐 Accessing the Tools
