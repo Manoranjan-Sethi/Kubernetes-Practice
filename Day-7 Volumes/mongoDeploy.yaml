@@ -24,3 +24,9 @@ spec:
               value: admin
             - name: MONGO_INITDB_ROOT_PASSWORD
               value: admin
+          volumeMounts:
+            - name: mongo-volume # connect to the volume
+              mountPath: /data/db # Mounting the volume to persist data
+      volumes:
+        - name: mongo-volume
+          emptyDir: {}  # empty volume
