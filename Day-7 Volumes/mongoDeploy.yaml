@@ -29,4 +29,7 @@ spec:
               mountPath: /data/db # Mounting the volume to persist data
       volumes:
         - name: mongo-volume
-          emptyDir: {}  # empty volume
+          # emptyDir: {}  # empty volume
+          persistentVolumeClaim:
+            claimName: local-pvc # Used the PVC created earlier
+
