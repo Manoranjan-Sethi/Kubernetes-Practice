@@ -29,6 +29,10 @@ nodes:
 kind create cluster --name mykindcluster --config kind-config.yaml
 ```
 
+```bash
+kind delete cluster --name mykindcluster
+```
+
 ### 4️⃣ Verify Nodes
 
 ```bash
