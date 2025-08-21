@@ -29,11 +29,13 @@ nodes:
 kind create cluster --name mykindcluster --config kind-config.yaml
 ```
 
+### 4️⃣ Delete Cluster
+
 ```bash
 kind delete cluster --name mykindcluster
 ```
 
-### 4️⃣ Verify Nodes
+### 5️⃣ Verify Nodes
 
 ```bash
 kubectl get nodes
