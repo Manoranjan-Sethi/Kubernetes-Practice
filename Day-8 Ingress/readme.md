@@ -87,6 +87,7 @@ Ingress acts as a single-entry point for routing external traffic to multiple se
         path: /flask/(.*) 
    ```
 
+   * Access Flask/About → [http://localhost:8080/flask/about](http://localhost:8080/flask)
 
 ---
 
