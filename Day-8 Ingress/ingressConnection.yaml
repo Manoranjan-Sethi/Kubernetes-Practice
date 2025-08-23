@@ -1,0 +1,29 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flaskandnginx-ingress
+  annotations:
+    # nginx.ingress.kubernetes.io/rewrite-target: /    # changed from / to /$1 to capture the rest of the path i.e. /flask/{anything}
+
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: /nginx
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 8000
+      - pathType: ImplementationSpecific
+        path: /flask/(.*)    # changed from /flask to /flask/(.*) to capture the rest of the path i.e. /flask/about
+        backend:
+          service:
+            name: flask-service
+            port:
+              number: 8001
+---
