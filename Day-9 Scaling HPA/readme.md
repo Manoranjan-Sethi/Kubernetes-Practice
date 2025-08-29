@@ -88,6 +88,25 @@ kubectl autoscale deployment nginx-deployment --cpu-percent=70 --min=1 --max=10
 kubectl run -it --rm load-generator --image=busybox -- /bin/sh
 while true; do wget -q -O- http://nginx-service; done
 ```
+---
+
+## 📸 Screenshots
+
+Increase the Number of Pods Manually
+
+![Manual](./screenshot/Screenshot1.png)
+
+Adding `--kubelet-insecure-tls` to github file in `specs`
+
+![`--kubelet-insecure-tls`](./screenshot/Screenshot2.png)
+
+See the Utilization
+
+![Utization](./screenshot/Screenshot3.png)
+
+AutoScaled Pods after Busybox test
+
+![AutoScaled](./screenshot/Screenshot4.png)
 
 ---
 

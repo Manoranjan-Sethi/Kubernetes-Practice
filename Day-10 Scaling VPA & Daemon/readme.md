@@ -94,6 +94,23 @@ Output showed one `nginx-daemon` Pod running on each worker node:
 
 ---
 
+## 📸 Screenshots
+
+VPA Auto Allocating Pod Resources
+
+![Pod Resources](./screenshot/Screenshot1.png)
+
+After running Busybox Increase in Resources
+
+![Pod Resources](./screenshot/Screenshot2.png)
+
+DaemonSet runs once in each Node
+
+![![Pod Resources](./screenshot/Screenshot2.png)
+](./screenshot/Screenshot3.png)
+
+---
+
 ## 💡 Key Takeaways
 
 * **HPA** → Scale out (more Pods).
@@ -102,3 +119,4 @@ Output showed one `nginx-daemon` Pod running on each worker node:
 
 📖 Great for understanding **efficient scaling** and **node-wide deployments** in Kubernetes.
 
+#Kubernetes #VPA #Scaling #DevOps #DaemonSet
