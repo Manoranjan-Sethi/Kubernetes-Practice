@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginxWithSidecar
+spec:
+  containers:
+    - name: nginx             # Main application container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+    - name: nginxLogContainer  # Sidecar container which will run some shell scripts
+      image: busybox:latest
+      command: ['/bin/sh', '-c', 'tail -f /var/log/nginx/access.log']  # tail command is used to read the log file and -c for command
