@@ -65,6 +65,6 @@ Each day covers one Kubernetes concept with:
 
 👤 **Manoranjan Sethi**
 💼 Aspiring DevOps Engineer | Kubernetes | Docker | Cloud-Native
-📌 [LinkedIn](https://www.linkedin.com/manoranjan-sethi/)
+📌 [LinkedIn](https://www.linkedin.com/in/manoranjan-sethi/)
 
 
